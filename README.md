@@ -71,3 +71,5 @@ Jika muncul `hf: command not found`, gunakan `.venv/bin/hf ...` seperti contoh d
 
 - Teks panjang dipotong otomatis hingga 256 token.
 - Untuk analisis banyak teks sekaligus, gunakan tab **Analisis Banyak Teks**.
+- Jika log Space menampilkan warning `unauthenticated requests`, tambahkan Secret `HF_TOKEN` di Settings -> Variables and secrets pada Space Anda.
+- Pesan `roberta.embeddings.position_ids | UNEXPECTED` saat load model umumnya tidak fatal dan aplikasi tetap bisa jalan.

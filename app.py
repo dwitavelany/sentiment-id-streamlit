@@ -26,8 +26,9 @@ EMOJI_MAP = {
 
 @st.cache_resource(show_spinner="Memuat model bahasa Indonesia...")
 def load_model():
-    tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
-    model = AutoModelForSequenceClassification.from_pretrained(MODEL_NAME)
+    hf_token = os.getenv("HF_TOKEN")
+    tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, token=hf_token)
+    model = AutoModelForSequenceClassification.from_pretrained(MODEL_NAME, token=hf_token)
     return tokenizer, model
 
 
