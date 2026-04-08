@@ -33,7 +33,7 @@ streamlit run app.py
 ### Opsi 1: Upload Manual
 
 1. Login ke https://huggingface.co dan buat Space baru.
-2. Pilih `SDK: Streamlit`.
+2. Pilih `SDK: Docker`.
 3. Upload file berikut ke root Space:
    - `app.py`
    - `requirements.txt`
@@ -59,6 +59,10 @@ git push -u hf main
 ```
 
 Catatan: Hugging Face CLI terbaru tidak lagi menerima `streamlit` sebagai `--space-sdk` saat create repo. Solusi resminya adalah pakai `docker` dan jalankan Streamlit dari `Dockerfile`.
+Untuk `git push` ke `huggingface.co`, password akun tidak didukung. Gunakan User Access Token (role `write`) dari https://huggingface.co/settings/tokens.
+Saat prompt Git muncul:
+- Username: username Hugging Face Anda
+- Password: token Hugging Face (contoh diawali `hf_...`)
 
 Jika muncul error `externally-managed-environment`, pastikan semua perintah pip dijalankan setelah `source .venv/bin/activate`.
 Jika muncul `hf: command not found`, gunakan `.venv/bin/hf ...` seperti contoh di atas.
