@@ -1,6 +1,6 @@
 ---
 title: Sentiment Analysis Indonesia
-emoji: 🇮🇩
+emoji: 🤖
 colorFrom: blue
 colorTo: green
 sdk: docker
