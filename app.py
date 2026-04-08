@@ -8,10 +8,15 @@ os.environ.setdefault("STREAMLIT_SERVER_FILE_WATCHER_TYPE", "none")
 import streamlit as st
 import torch
 from transformers import AutoModelForSequenceClassification, AutoTokenizer
+from transformers.utils import logging as hf_logging
 
 
 MODEL_NAME = "w11wo/indonesian-roberta-base-sentiment-classifier"
 MAX_LENGTH = 256
+
+# Keep runtime logs clean in Spaces; model still loads the same way.
+hf_logging.set_verbosity_error()
+
 LABEL_MAP = {
     "LABEL_0": "Positif",
     "LABEL_1": "Netral",
