@@ -13,9 +13,9 @@ from transformers import AutoModelForSequenceClassification, AutoTokenizer
 MODEL_NAME = "w11wo/indonesian-roberta-base-sentiment-classifier"
 MAX_LENGTH = 256
 LABEL_MAP = {
-    "LABEL_0": "Negatif",
+    "LABEL_0": "Positif",
     "LABEL_1": "Netral",
-    "LABEL_2": "Positif",
+    "LABEL_2": "Negatif",
 }
 EMOJI_MAP = {
     "Negatif": "😕",
