@@ -1,5 +1,9 @@
+import os
 import re
 from typing import List, Dict
+
+# Avoid Streamlit module watcher probing transformers optional vision modules.
+os.environ.setdefault("STREAMLIT_SERVER_FILE_WATCHER_TYPE", "none")
 
 import streamlit as st
 import torch

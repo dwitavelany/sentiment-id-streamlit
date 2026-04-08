@@ -12,4 +12,4 @@ COPY . /app
 EXPOSE 7860
 
 # Streamlit must listen on 0.0.0.0 and HF Spaces uses port 7860
-CMD ["streamlit", "run", "app.py", "--server.address=0.0.0.0", "--server.port=7860"]
+CMD ["streamlit", "run", "app.py", "--server.address=0.0.0.0", "--server.port=7860", "--server.fileWatcherType=none"]
