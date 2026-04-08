@@ -3,9 +3,8 @@ title: Sentiment Analysis Indonesia
 emoji: 🇮🇩
 colorFrom: blue
 colorTo: green
-sdk: streamlit
-sdk_version: 1.44.1
-app_file: app.py
+sdk: docker
+app_port: 7860
 pinned: false
 ---
 
@@ -52,12 +51,14 @@ git add .
 git commit -m "Initial Streamlit Indonesian sentiment app"
 
 .venv/bin/hf auth login
-.venv/bin/hf repo create sentiment-id-streamlit --type space --space_sdk streamlit
+.venv/bin/hf repos create sentiment-id-streamlit --type space --space-sdk docker
 
-git remote add origin https://huggingface.co/spaces/<username>/sentiment-id-streamlit
+git remote add hf https://huggingface.co/spaces/<username>/sentiment-id-streamlit
 git branch -M main
-git push -u origin main
+git push -u hf main
 ```
+
+Catatan: Hugging Face CLI terbaru tidak lagi menerima `streamlit` sebagai `--space-sdk` saat create repo. Solusi resminya adalah pakai `docker` dan jalankan Streamlit dari `Dockerfile`.
 
 Jika muncul error `externally-managed-environment`, pastikan semua perintah pip dijalankan setelah `source .venv/bin/activate`.
 Jika muncul `hf: command not found`, gunakan `.venv/bin/hf ...` seperti contoh di atas.
